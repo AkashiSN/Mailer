@@ -23,7 +23,7 @@
 	  ]
 	}');
 
-	$apiKey = 'SENDGRID_API_KEY';
+	$apiKey = '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';
 	$sg = new \SendGrid($apiKey);
 
 	$response = $sg->client->mail()->send()->post($request_body);
