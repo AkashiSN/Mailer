@@ -10,13 +10,6 @@
   </head>
   <body>
     <div class="container">
-      <div class="page-header" id="banner">
-        <div class="row">
-          <h1>メール送信
-          </h1>
-          <br>
-        </div>
-      </div>
       <div class="col-lg-6">
         <div class="well bs-component">
           <form class="form-horizontal">
