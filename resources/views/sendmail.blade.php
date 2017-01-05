@@ -10,9 +10,16 @@
   </head>
   <body>
     <div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <h1>メール送信
+          </h1>
+          <br>
+        </div>
+      </div>
       <div class="col-lg-6">
         <div class="well bs-component">
-          <form class="form-horizontal">
+          <form class="form-horizontal" action="/send.php" method="post">
             <fieldset>
               <legend>メール送信
               </legend>
@@ -20,28 +27,28 @@
                 <label for="inputSubject" class="col-lg-2 control-label">Subject
                 </label>
                 <div class="col-lg-10">
-                  <input type="text" class="form-control" id="inputSubject" placeholder="Subject">
+                  <input type="text" class="form-control" id="inputSubject" name="Subject" placeholder="Subject">
                 </div>
               </div>
               <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">To:
                 </label>
                 <div class="col-lg-10">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="To:">
+                  <input type="text" class="form-control" id="inputEmail" name="To" placeholder="To:">
                 </div>
               </div>
               <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">From:
                 </label>
                 <div class="col-lg-10">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="From:">
+                  <input type="text" class="form-control" id="inputEmail" name="From" placeholder="From:">
                 </div>
               </div>
               <div class="form-group">
                 <label for="textArea" class="col-lg-2 control-label">Body
                 </label>
                 <div class="col-lg-10">
-                  <textarea class="form-control" rows="5" id="textArea">
+                  <textarea class="form-control" rows="5" id="textArea" name="Body">
                   </textarea>
                 </div>
               </div>
