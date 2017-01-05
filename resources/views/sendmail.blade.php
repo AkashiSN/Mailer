@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <title>Admin
+    <title>Mailer
     </title>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <script type="text/javascript" src="/js/jquery-3.1.1.min.js">
@@ -10,13 +10,6 @@
   </head>
   <body>
     <div class="container">
-      <div class="page-header" id="banner">
-        <div class="row">
-          <h1>メール送信
-          </h1>
-          <br>
-        </div>
-      </div>
       <div class="col-lg-6">
         <div class="well bs-component">
           <form class="form-horizontal">
@@ -48,7 +41,7 @@
                 <label for="textArea" class="col-lg-2 control-label">Body
                 </label>
                 <div class="col-lg-10">
-                  <textarea class="form-control" rows="100" id="textArea">
+                  <textarea class="form-control" rows="5" id="textArea">
                   </textarea>
                 </div>
               </div>
