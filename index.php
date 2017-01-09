@@ -1,58 +1,69 @@
-<?php
-
-/**
- * Laravel - A PHP Framework For Web Artisans
- *
- * @package  Laravel
- * @author   Taylor Otwell <taylor@laravel.com>
- */
-
-/*
-|--------------------------------------------------------------------------
-| Register The Auto Loader
-|--------------------------------------------------------------------------
-|
-| Composer provides a convenient, automatically generated class loader for
-| our application. We just need to utilize it! We'll simply require it
-| into the script here so that we don't have to worry about manual
-| loading any of our classes later on. It feels nice to relax.
-|
-*/
-
-require __DIR__.'/../bootstrap/autoload.php';
-
-/*
-|--------------------------------------------------------------------------
-| Turn On The Lights
-|--------------------------------------------------------------------------
-|
-| We need to illuminate PHP development, so let us turn on the lights.
-| This bootstraps the framework and gets it ready for use, then it
-| will load up this application so that we can run it and send
-| the responses back to the browser and delight our users.
-|
-*/
-
-$app = require_once __DIR__.'/../bootstrap/app.php';
-
-/*
-|--------------------------------------------------------------------------
-| Run The Application
-|--------------------------------------------------------------------------
-|
-| Once we have the application, we can handle the incoming request
-| through the kernel, and send the associated response back to
-| the client's browser allowing them to enjoy the creative
-| and wonderful application we have prepared for them.
-|
-*/
-
-$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
-);
-
-$response->send();
-
-$kernel->terminate($request, $response);
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mailer
+    </title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <script type="text/javascript" src="/js/jquery-3.1.1.min.js">
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <h1>メール送信
+          </h1>
+          <br>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="well bs-component">
+          <form class="form-horizontal" action="/send.php" method="post">
+            <fieldset>
+              <legend>メール送信
+              </legend>
+              <div class="form-group">
+                <label for="inputSubject" class="col-lg-2 control-label">Subject
+                </label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="inputSubject" name="Subject" placeholder="Subject">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">To:
+                </label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="inputEmail" name="To" placeholder="To:">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">From:
+                </label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="inputEmail" name="From" placeholder="From:">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="textArea" class="col-lg-2 control-label">Body
+                </label>
+                <div class="col-lg-10">
+                  <textarea class="form-control" rows="5" id="textArea" name="Body">
+                  </textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <button type="reset" class="btn btn-default">キャンセル
+                  </button>
+                  <button type="submit" class="btn btn-primary">送信
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
