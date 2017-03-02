@@ -1,69 +1,60 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="UTF-8">
-    <title>Mailer
-    </title>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <script type="text/javascript" src="/js/jquery-3.1.1.min.js">
-    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="favicon.ico">
+    <title>Mailer</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
+
   <body>
     <div class="container">
-      <div class="page-header" id="banner">
-        <div class="row">
-          <h1>メール送信
-          </h1>
-          <br>
-        </div>
+
+      <div class="main">
+        <h1>Mailer</h1>        
       </div>
-      <div class="col-lg-6">
-        <div class="well bs-component">
-          <form class="form-horizontal" action="/send.php" method="post">
-            <fieldset>
-              <legend>メール送信
-              </legend>
-              <div class="form-group">
-                <label for="inputSubject" class="col-lg-2 control-label">Subject
-                </label>
-                <div class="col-lg-10">
-                  <input type="text" class="form-control" id="inputSubject" name="Subject" placeholder="Subject">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">To:
-                </label>
-                <div class="col-lg-10">
-                  <input type="text" class="form-control" id="inputEmail" name="To" placeholder="To:">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">From:
-                </label>
-                <div class="col-lg-10">
-                  <input type="text" class="form-control" id="inputEmail" name="From" placeholder="From:">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="textArea" class="col-lg-2 control-label">Body
-                </label>
-                <div class="col-lg-10">
-                  <textarea class="form-control" rows="5" id="textArea" name="Body">
-                  </textarea>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                  <button type="reset" class="btn btn-default">キャンセル
-                  </button>
-                  <button type="submit" class="btn btn-primary">送信
-                  </button>
-                </div>
-              </div>
-            </fieldset>
-          </form>
+
+      <form method="POST" action="send.php">
+        <div class="form-group">
+          <label for="Destination">Destination email address</label>
+          <input type="email" class="form-control" id="Destination" name="Destination" placeholder="To" required autofocus>
         </div>
+        <div class="form-group">
+          <label for="Subject">Email subject</label>
+          <input type="text" class="form-control" id="Subject" name="Subject" placeholder="Subject">
+        </div>
+        <div class="form-group">
+          <label for="From">Sender email address</label>
+          <input type="email" class="form-control" id="From" name="From" placeholder="From" required>
+        </div>
+        <div class="form-group">
+          <label for="Body">Email body</label>
+          <textarea class="form-control" id="Body" name="Body" rows="5" required></textarea>
+        </div>
+         <button type="reset" class="btn btn-default">キャンセル</button>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+      <?php
+        if(isset($_SESSION['statusCode'])){
+          if($_SESSION['statusCode'] == '202'){
+      ?>
+      <div class="alert alert-success" role="alert" style="margin-top: 10px">
+        <strong>Sending success</strong>
       </div>
+      <?php }else{ ?>
+      <div class="alert alert-danger" role="alert" style="margin-top: 10px">
+        <strong>Sending failed</strong>
+      </div>
+      <?php 
+          }
+        } 
+      ?>
     </div>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
   </body>
 </html>
