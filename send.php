@@ -24,7 +24,7 @@
   ]
 }");
 
-  $apiKey = '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';
+  $apiKey = '';
   $sg = new \SendGrid($apiKey);
 
   $response = $sg->client->mail()->send()->post($request_body);
