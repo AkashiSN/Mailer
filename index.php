@@ -22,7 +22,7 @@
           <a class="nav-link active" data-toggle="tab" href="#text" role="tab">Text input</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#file" role="tab">File input</a>
+          <a class="nav-link" data-toggle="tab" href="#yaml" role="tab">Yaml input</a>
         </li>
       </ul>
       <script type="text/javascript">
@@ -88,7 +88,7 @@
             </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="file" role="tabpanel">
+        <div class="tab-pane fade" id="yaml" role="tabpanel">
           <div class="card">
             <div class="card-block">
               <form enctype="multipart/form-data" action="send.php" method="POST">

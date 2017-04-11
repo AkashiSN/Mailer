@@ -30,7 +30,7 @@
     }");
   }   
 
-  $apiKey = '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';
+  $apiKey = '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';
   $sg = new \SendGrid($apiKey);
 
   $response = $sg->client->mail()->send()->post($request_body);
