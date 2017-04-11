@@ -1,5 +1,6 @@
 {
   "require": {
-    "sendgrid/sendgrid": "~5.2"
+    "sendgrid/sendgrid": "~5.2",
+    "symfony/yaml":"3.2.7"
   }
 }

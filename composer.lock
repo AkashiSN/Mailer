@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "695f9521089efe9b535db14fa86a04bd",
+    "content-hash": "a4bf6469cbc7fc5392613bc926c1da93",
     "packages": [
         {
             "name": "sendgrid/php-http-client",
-            "version": "3.5.1",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sendgrid/php-http-client.git",
-                "reference": "3c4c35eafd364ebcfdbb0a37f655417beed8ee0f"
+                "reference": "f886cd3cf48bafd3c7b28b1ca5c2484f7916cff1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sendgrid/php-http-client/zipball/3c4c35eafd364ebcfdbb0a37f655417beed8ee0f",
-                "reference": "3c4c35eafd364ebcfdbb0a37f655417beed8ee0f",
+                "url": "https://api.github.com/repos/sendgrid/php-http-client/zipball/f886cd3cf48bafd3c7b28b1ca5c2484f7916cff1",
+                "reference": "f886cd3cf48bafd3c7b28b1ca5c2484f7916cff1",
                 "shasum": ""
             },
             "require": {
@@ -56,20 +56,20 @@
                 "rest",
                 "sendgrid"
             ],
-            "time": "2016-11-17T22:45:31+00:00"
+            "time": "2017-03-02T05:51:19+00:00"
         },
         {
             "name": "sendgrid/sendgrid",
-            "version": "5.1.2",
+            "version": "5.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sendgrid/sendgrid-php.git",
-                "reference": "46f85e69ec6a36d4674e7131e442fbecdaa5d183"
+                "reference": "9ac2aa09a4dfe3151bff2fc5f51a4bbf7aac8591"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/46f85e69ec6a36d4674e7131e442fbecdaa5d183",
-                "reference": "46f85e69ec6a36d4674e7131e442fbecdaa5d183",
+                "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/9ac2aa09a4dfe3151bff2fc5f51a4bbf7aac8591",
+                "reference": "9ac2aa09a4dfe3151bff2fc5f51a4bbf7aac8591",
                 "shasum": ""
             },
             "require": {
@@ -102,7 +102,62 @@
                 "send",
                 "sendgrid"
             ],
-            "time": "2016-11-17T23:05:01+00:00"
+            "time": "2017-04-04T18:23:00+00:00"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v3.2.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "62b4cdb99d52cb1ff253c465eb1532a80cebb621"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/62b4cdb99d52cb1ff253c465eb1532a80cebb621",
+                "reference": "62b4cdb99d52cb1ff253c465eb1532a80cebb621",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "symfony/console": "~2.8|~3.0"
+            },
+            "suggest": {
+                "symfony/console": "For validating YAML files using the lint command"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-03-20T09:45:15+00:00"
         }
     ],
     "packages-dev": [],
