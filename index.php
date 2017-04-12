@@ -14,6 +14,28 @@
 
   <body>
     <div class="container">
+      <?php
+        if(isset($_SESSION['statusCode'])){
+          if($_SESSION['statusCode'] == '202'){
+        ?>
+        <div class="alert alert-success fade show" role="alert" style="margin-top: 10px">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>送信成功</strong>
+        </div>
+        <?php }else{ ?>
+        <div class="alert alert-danger fade show" role="alert" style="margin-top: 10px">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>送信失敗</strong>
+        </div>
+        <?php
+            }
+            unset($_SESSION['statusCode']);
+          }
+        ?>
       <div class="main">
         <h1>Mailer</h1>
       </div>
@@ -105,29 +127,6 @@
           </div>
         </div>
       </div>
-    </div>
-      <?php
-        if(isset($_SESSION['statusCode'])){
-          if($_SESSION['statusCode'] == '202'){
-      ?>
-      <div class="alert alert-success fade show" role="alert" style="margin-top: 10px">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <strong>送信成功</strong>
-      </div>
-      <?php }else{ ?>
-      <div class="alert alert-danger fade show" role="alert" style="margin-top: 10px">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <strong>送信失敗</strong>
-      </div>
-      <?php
-          }
-          unset($_SESSION['statusCode']);
-        }
-      ?>
     </div>
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
