@@ -69,6 +69,12 @@ Body:
 
  <https://cb-mailer.herokuapp.com/>
 
+## Screenshot
+
+![img](image/img.png)
+![img](image/img1.png)
+
+
 ## Installation
 
     $ git clone https://github.com/AkashiSN/Mailer
