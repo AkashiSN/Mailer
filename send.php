@@ -4,9 +4,34 @@
   session_start();
 
   if(isset($_FILES['file']['tmp_name'])){
-    echo $_FILES['file']['tmp_name'];
     $yaml = Yaml::parse(file_get_contents($_FILES['file']['tmp_name']));
-    print_r($yaml);
+    for($i = 0; $i < sizeof($yaml['To']['emails']); $i++){
+      $DestinationName = $yaml['To']['names'][$i];
+      $Destination = $yaml['To']['emails'][$i];
+      $request_body = json_decode("{
+        \"personalizations\": [
+          {
+            \"to\": [
+              {
+                \"name\": \"$DestinationName\",
+                \"email\": \"$Destination\"
+              }
+            ],
+            \"subject\": \"{$yaml['Subject']}\"
+          }
+        ],
+        \"from\": {
+          \"name\": \"{$yaml['From']['name']}\",
+          \"email\": \"{$yaml['From']['email']}\"
+        },
+        \"content\": [
+          {
+            \"type\": \"{$yaml['Body']['type']}\",
+            \"value\": \"{$yaml['Body']['value']}\"
+          }
+        ]
+      }");
+    }
   }
   else{
     for($i = 0; $i < sizeof($_POST['Destination']); $i++){
@@ -36,15 +61,16 @@
         ]
       }");
     }
-    echo "text";
   }
-/*
-  $apiKey = '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';
-  $sg = new \SendGrid($apiKey);
 
-  $response = $sg->client->mail()->send()->post($request_body);
+  if(isset($request_body)){
+    $apiKey = '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';
+    $sg = new \SendGrid($apiKey);
 
-  $_SESSION['statusCode'] = $response->statusCode();
+    $response = $sg->client->mail()->send()->post($request_body);
+
+    $_SESSION['statusCode'] = $response->statusCode();
+  }
   
   header("HTTP/1.1 301 Moved Permanently");
-  header("Location: index.php");*/
+  header("Location: index.php");

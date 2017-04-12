@@ -9,11 +9,12 @@
 ## Requirement
 
 - PHP 5.6 or 7.0
-- sendgrid-php ~5.2
+- composer
+- sendgrid/sendgrid ~5.4.1
+- libyaml-devel
+- symfony/yaml 3.2.7
 
 ## Usage
-
-__まだYamlの実装はできていません__
 
 宛先は、Yamlファイルをアップロードするか、直接アドレスを入力します。
 
@@ -24,8 +25,8 @@ To:
  names: "名前の配列"
  emails: "名前に対応したメールアドレスの配列"
 From:
- names: "名前"
- emails: "メールアドレス"
+ name: "名前"
+ email: "メールアドレス"
 Subject: "メールの件名"
 Body:
  type: "text/plainやtext/htmlなど"
@@ -39,13 +40,28 @@ To:
  names: ["Smith", "Shelton", "Kelly"]
  emails: ["smith@mail.com", "shelton@mail.com", "kelly@mail.com"]
 From:
- names: "John"
- emails: "John@mail.com"
+ name: "John"
+ email: "John@mail.com"
 Subject: "Test Mail"
 Body:
  type: "text/plain"
  value: "TEST!"
 ```
+
+
+この例では`"Smith", "Shelton", "Kelly"`のそれぞれに
+
+```yaml
+From:
+ name: "John"
+ email: "John@mail.com"
+Subject: "Test Mail"
+Body:
+ type: "text/plain"
+ value: "TEST!"
+```
+
+のようなメールが送信されます。
 
 ## URL
 
@@ -55,6 +71,7 @@ Body:
 
     $ git clone https://github.com/AkashiSN/Mailer
     $ cd Mailer
+    $ composer update
     $ php -S localhost:8080
 
 ## Update
@@ -64,3 +81,6 @@ Body:
 
 ### 2017/03/03
 - 画面経由で複数のアドレスに一斉メールを送信機能追加
+
+### 2017/04/12
+- Yamlでの入力機能追加

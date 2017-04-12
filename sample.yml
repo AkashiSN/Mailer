@@ -1,0 +1,10 @@
+To:
+ names: ["Nish", "e1533", "jyoken"]
+ emails: ["btorntireinvynriy@gmail.com", "e1533@s.akashi.ac.jp", "admin@jyoken.info"]
+From:
+ name: "admin"
+ email: "admin@hoge.com"
+Subject: "Test Mail"
+Body:
+ type: "text/plain"
+ value: "This is test mail!"
