@@ -1,7 +1,18 @@
 <?php
   require 'vendor/autoload.php';
+  require 'define.php'
   use Symfony\Component\Yaml\Yaml;
   session_start();
+
+  function sendmail($request_body){
+    if(isset($request_body)){
+      $sg = new \SendGrid($apiKey);
+
+      $response = $sg->client->mail()->send()->post($request_body);
+
+      $_SESSION['statusCode'] = $response->statusCode();
+    }
+  }    
 
   if(isset($_FILES['file']['tmp_name'])){
     $yaml = Yaml::parse(file_get_contents($_FILES['file']['tmp_name']));
@@ -32,6 +43,7 @@
         ]
       }");
     }
+    sendmail($request_body);
   }
   else{
     for($i = 0; $i < sizeof($_POST['Destination']); $i++){
@@ -61,16 +73,8 @@
         ]
       }");
     }
+    sendmail($request_body);
   }
 
-  if(isset($request_body)){
-    $apiKey = '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';
-    $sg = new \SendGrid($apiKey);
-
-    $response = $sg->client->mail()->send()->post($request_body);
-
-    $_SESSION['statusCode'] = $response->statusCode();
-  }
-  
   header("HTTP/1.1 301 Moved Permanently");
   header("Location: index.php");
